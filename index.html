@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Hunter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #87CEEB; /* Sky blue background */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Ensure body takes full viewport height */
+            overflow: auto; /* Allow scrolling if canvas exceeds viewport */
+            justify-content: center; /* Center vertically */
+        }
+        canvas {
+            border: 1px solid black;
+            display: none; /* Hidden until game starts */
+            background-color: white; /* Add background to make game area visible */
+            max-width: 100%; /* Prevent exceeding viewport width */
+            max-height: 90vh; /* Prevent exceeding viewport height */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+        }
+        #menu, #pauseMenu {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 10; /* Ensure menus are above canvas */
+        }
+        #menu {
+            display: block;
+        }
+        #pauseMenu {
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <h1>Dog Hunter</h1>
+        <button id="newGame">New Game</button>
+        <button id="continueGame" style="display: none;">Continue</button>
+    </div>
+    <div id="pauseMenu">
+        <h2>Pause</h2>
+        <button id="saveGame">Save</button>
+        <button id="exitGame">Exit</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>
